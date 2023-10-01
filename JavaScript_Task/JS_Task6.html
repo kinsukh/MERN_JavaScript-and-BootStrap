@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+    <style>
+        .box{
+            box-shadow: 10px;
+            border-color: blue;
+        }
+        h3{
+            font-style: italic;
+            font-family:'Lucida Calligraphy', 'cursive';
+        }
+        .input1{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .RM-FP{
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body >
+<body class="mx-auto m-5 w-25">
+    <div class="box bg-body-secondary p-4 gap-3 ">
+        <div class="input1">
+            <h3 class="text-center p-4">Instagram</h3>
+            <div class="input-group p-2">
+                <span class="input-group-text"><i class="bi bi-person-fill h5"></i></span>
+                <input type="text" class="form-control" placeholder="Username">
+            </div>
+            <div class="input-group p-2">
+                <span class="input-group-text"><i class="bi bi-lock-fill h5"></i></span>
+                <input type="password" class="form-control" placeholder="Password">
+            </div>
+            <button type="button" class="btn btn-primary w-100">Login</button>
+            <div class="RM-FP d-flex">
+                <div class="m-2">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Remember Me</label>
+                </div>              
+                <button type="button" class="btn btn-link">Forget Password?</button>
+            </div>            
+        </div>
+    </div>
+    <div>
+        <p class="text-center m-3">Don't have an account? <a href="#">Sign up here</a></p>
+    </div>
+
+</body>
+</html>

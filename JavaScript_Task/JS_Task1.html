@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Task1 - Reverse Number</title>
+    <script>
+        function reverseNumber() {
+            // Get the input value from the user
+            let num = parseInt(document.getElementById("numberInput").value);
+            console.log("Input Number: " + num)
+            // Reverse the number
+            let reversedNum = 0;
+            while (num !== 0) {
+                reversedNum = (reversedNum * 10) + (num % 10);
+                num = Math.floor(num / 10);
+            }
+            
+            // Display the reversed number on the web page
+            document.getElementById("result").innerHTML = "Reversed Number: " + reversedNum;
+            console.log("Reversed Number: " + reversedNum)
+        }
+    </script>
+</head>
+<body>
+    <h1>Reverse Number</h1>
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput">
+    <button onclick="reverseNumber()"> Reverse </button>
+    <p id="result"></p>
+</body>
+</html>

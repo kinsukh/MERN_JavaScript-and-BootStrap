@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Task3</title>
+    <script>
+        function multiply(){
+            let num1 = parseInt(document.getElementById("numberInput1").value);
+            let num2 = parseInt(document.getElementById("numberInput2").value);
+            let result = num1 * num2;
+            document.getElementById("result").innerHTML = "The Result is:  " + result;
+            console.log("Input Number 1: " + num1)
+            console.log("Input Number 2: " + num2)
+            console.log("Multiplication Result: " + result)
+        }
+        function divide(){
+            let num1 = parseInt(document.getElementById("numberInput1").value);
+            let num2 = parseInt(document.getElementById("numberInput2").value);
+            let result = num1 / num2;
+            document.getElementById("result").innerHTML = "The Result is:  " + result;
+            console.log("Input Number 1: " + num1)
+            console.log("Input Number 2: " + num2)  
+            console.log("Division Result: " + result)
+        }
+    </script>
+    <style>
+        .container{
+            border:2px solid black;
+            margin-top: 10%; 
+            background-color: rgb(209, 246, 246);
+        }
+        button{
+            border-radius: 10px;
+            margin-left: 10px;
+        }
+        button:hover{
+            border-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="container w-25 rounded">
+        <br>
+        <label for="numberInput1">1st Number:  </label>
+        <input type="number" id="numberInput1">
+        <br>
+        <br>
+        <label for="numberInput2">2nd Number: </label>
+        <input type="number" id="numberInput2">
+        <br><br>
+        <button onclick="multiply()">Multiply</button>
+        <button onclick="divide()">Divide</button>
+        <br><br>
+        <p id="result"></p>
+    </div>
+</body>
+</html>
