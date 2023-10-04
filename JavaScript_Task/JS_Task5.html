@@ -18,7 +18,11 @@
             text-align: right;
             padding-right: 10px;
         }
+        .border-red{
+            border: 2px solid red;
+        }
     </style>
+    
 </head>
 <body>
     <div class="container ">
@@ -27,6 +31,7 @@
                 <tr>
                     <td class="tdx">Name: </td>
                     <td><input type="text" name="name" id="name" placeholder="your name"></td>
+
                 </tr>
                 <tr>
                     <td class="tdx">Email: </td>
@@ -41,10 +46,46 @@
                     <td><textarea name="message" id="message" cols="30" rows="3" placeholder="write a message..."></textarea></td>
                 </tr>
                 <tr>
-                    <td colspan="2" class="text-center"><button type="submit">Submit</button></td>
+                    <td colspan="2" class="text-center"><button type="submit" class="submit">Submit</button></td>
+                    
                 </tr>
             </table>
         </form>
     </div>
+
+    <script>
+        document.querySelector('.submit').addEventListener('click', function(event){
+            event.preventDefault();
+            var name = document.querySelector('#name').value;
+            var email = document.querySelector('#email').value;
+            var website = document.querySelector('#website').value;
+            var message = document.querySelector('#message').value;
+            if(name===""){
+                document.querySelector("#name").classList.add("border-red");
+                document.querySelector("#name").setAttribute('placeholder','Fill the name');
+            } else {
+                document.querySelector("#name").classList.remove("border-red");
+            }
+            if(email===""){
+                document.querySelector("#email").classList.add("border-red");
+                document.querySelector("#email").setAttribute('placeholder','Fill the email');
+            } else {
+                document.querySelector("#email").classList.remove("border-red");
+            }
+            if(website===""){
+                document.querySelector("#website").classList.add("border-red");
+                document.querySelector("#website").setAttribute('placeholder','Fill the website');
+            } else {
+                document.querySelector("#website").classList.remove("border-red");
+            }
+            if(message===""){
+                document.querySelector("#message").classList.add("border-red");
+                document.querySelector("#message").setAttribute('placeholder','Fill the message');
+            } else {
+                document.querySelector("#message").classList.remove("border-red");
+            }
+        })
+    </script>
 </body>
+
 </html>
