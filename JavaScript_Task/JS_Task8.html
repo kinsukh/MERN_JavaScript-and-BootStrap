@@ -39,6 +39,9 @@
       border: 1px solid black;
       background-image: linear-gradient(#f6f0bc,#d575bd);
     }
+    span{
+      color: red;
+    }
   </style>
 </head>
 <body>
@@ -47,65 +50,71 @@
         <form name="myform">
             <table>
             <tr>
-                <td>Name:</td>
+                <td>First Name:</td>
                 <td>
-                <input type="text" name="name" id="name" required>
+                <input type="text" name="name" id="name" >
                 <span id="f1"></span>
                 </td>
             </tr>
             <tr>
                 <td>Last Name:</td>
                 <td>
-                <input type="text" name="lname" id="lname" required>
+                <input type="text" name="lname" id="lname" >
                 <span id="f2"></span>
                 </td>
             </tr>
             <tr>
                 <td>Email:</td>
                 <td>
-                <input type="email" name="email" id="email" required>
+                <input type="email" name="email" id="email" >
                 <span id="f3"></span>
                 </td>
             </tr>
             <tr>
                 <td>Password:</td>
                 <td>
-                <input type="password" name="password" id="password" required>
+                <input type="password" name="password" id="password" >
                 <span id="f4"></span>
                 </td>
             </tr>
             <tr>
                 <td>Confirm Password:</td>
                 <td>
-                <input type="password" name="rpassword" id="rpassword" required>
+                <input type="password" name="rpassword" id="rpassword" >
                 <span id="f5"></span>
                 </td>
             </tr>
             <tr>
                 <td>Age:</td>
                 <td>
-                <input type="number" name="age" id="age" required>
-                <span id="f7"></span>
+                <input type="number" name="age" id="age" >
+                <span id="f6"></span>
                 </td>
             </tr>
             <tr>
+                <td>Phone:</td>
+                <td>
+                <input type="text" name="phone" id="phone" >
+                <span id="f7"></span>
+                </td>
+            <tr>
                 <td>Address:</td>
                 <td>
-                <textarea name="address" id="address" required></textarea>
+                <textarea name="address" id="address" ></textarea>
                 <span id="f8"></span>
                 </td>
             </tr>
             <tr>
                 <td>State:</td>
                 <td>
-                <input type="text" name="state" id="state" required>
+                <input type="text" name="state" id="state" >
                 <span id="f9"></span>
                 </td>
             </tr>
             <tr>
                 <td>Country:</td>
                 <td>
-                <select name="cc" id="cc" required>
+                <select name="cc" id="cc" >
                     <option value="">Choose your country</option>
                     <option value="USA">USA</option>
                     <option value="Canada">Canada</option>
@@ -117,25 +126,93 @@
             <tr>
                 <td>Gender:</td>
                 <td>
-                <input type="radio" name="gg" value="Male" required> Male
-                <input type="radio" name="gg" value="Female" required> Female
+                <input type="radio" name="gg" value="Male" > Male
+                <input type="radio" name="gg" value="Female" > Female
                 <span id="f11"></span>
                 </td>
             </tr>
             <tr>
                 <td>Terms and Conditions:</td>
                 <td>
-                <input type="checkbox" name="ffg" id="ffg" required> I agree
+                <input type="checkbox" name="ffg" id="ffg" > I agree
                 <span id="f12"></span>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" class="text-center">
-                <input type="submit" value="Submit" class="btn" onclick="validate()">
+                <input type="submit" value="Submit" class="submit">
                 </td>
             </tr>
             </table>
         </form>
     </div>
+    <script>
+      document.querySelector(".submit").addEventListener('click', function(){
+      event.preventDefault();
+      var firstName = document.querySelector('#name').value;
+      var lastName = document.querySelector('#lname').value;
+      var email = document.querySelector('#email').value;
+      var password = document.querySelector('#password').value;
+      var confirmation = document.querySelector('#rpassword').value;
+      var age = document.querySelector('#age').value;
+      var phone = document.querySelector('#phone').value;
+      var address = document.querySelector('#address').value;
+      var state = document.querySelector('#state').value;
+      
+      if(firstName===""){
+        document.querySelector("#f1").innerHTML="<span>POOR</span>";  
+      }else{
+        document.querySelector("#f1").innerHTML=""; 
+      }
+
+      if(lastName===""){
+        document.querySelector("#f2").innerHTML="<span>POOR</span>";  
+      }else{
+        document.querySelector("#f2").innerHTML=""; 
+      }
+
+      if(email===""||!email.includes("@")){
+        document.querySelector("#f3").innerHTML="<span>POOR</span>";  
+      }else{
+        document.querySelector("#f3").innerHTML=""; 
+      }
+
+      if(password===""){
+        document.querySelector("#f4").innerHTML="<span>POOR</span>";  
+      }else{
+        document.querySelector("#f4").innerHTML=""; 
+      }
+
+      if(confirmation==="" || confirmation!==password){
+        document.querySelector("#f5").innerHTML="<span>POOR OR MISMATCH</span>";  
+      }else{
+        document.querySelector("#f5").innerHTML=""; 
+      }
+
+      if(age===""){
+        document.querySelector("#f6").innerHTML="<span>POOR</span>";  
+      }else{
+        document.querySelector("#f6").innerHTML=""; 
+      }
+
+      if(phone===""){
+        document.querySelector("#f7").innerHTML="<span>POOR</span>";  
+      }else{
+        document.querySelector("#f7").innerHTML=""; 
+      }
+
+      if(address===""){
+        document.querySelector("#f8").innerHTML="<span>POOR</span>";  
+      }else{
+        document.querySelector("#f8").innerHTML=""; 
+      }
+
+      if(state===""){
+        document.querySelector("#f9").innerHTML="<span>POOR</span>";  
+      }else{
+        document.querySelector("#f9").innerHTML=""; 
+      }
+    });
+    </script>
 </body>
 </html>

@@ -24,7 +24,11 @@
         .RM-FP{
             justify-content: space-between;
         }
+        .border-red{
+            border: 2px solid red;
+        }
     </style>
+    
 </head>
 <body >
 <body class="mx-auto m-5 w-25">
@@ -33,11 +37,11 @@
             <h3 class="text-center p-4">Instagram</h3>
             <div class="input-group p-2">
                 <span class="input-group-text"><i class="bi bi-person-fill h5"></i></span>
-                <input type="text" class="form-control" placeholder="Username">
+                <input type="text" class="username form-control" placeholder="Username">
             </div>
             <div class="input-group p-2">
                 <span class="input-group-text"><i class="bi bi-lock-fill h5"></i></span>
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" class="password form-control" placeholder="Password">
             </div>
             <button type="button" class="btn btn-primary w-100">Login</button>
             <div class="RM-FP d-flex">
@@ -52,6 +56,22 @@
     <div>
         <p class="text-center m-3">Don't have an account? <a href="#">Sign up here</a></p>
     </div>
-
+    <script>
+        document.querySelector(".btn").addEventListener('click', function(event){
+            event.preventDefault();
+            var username = document.querySelector('.username').value;
+            var password = document.querySelector('.password').value;
+            if(username===""){
+                document.querySelector(".username").classList.add("border-red");
+            } else {
+                document.querySelector(".username").classList.remove("border-red");
+            }
+            if(password===""){
+                document.querySelector(".password").classList.add("border-red");
+            } else {
+                document.querySelector(".password").classList.remove("border-red");
+            }
+        })
+    </script>
 </body>
 </html>
